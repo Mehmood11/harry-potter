@@ -1,0 +1,40 @@
+$(document).ready(function () {
+    $(window).scroll(function () {
+        if (this.scrollY > 20) {
+            $('.first-top-nav, .second-top-nav').addClass("sticky");
+        } else {
+            $('.first-top-nav, .second-top-nav').removeClass("sticky");
+        }
+    });
+    //    Toggle Menu 
+    $('.home .second-top-nav .menu-btn').click(function () {
+        $('.home .second-top-nav ul').toggleClass("active");
+         $('.home .second-top-nav .menu-btn i').toggleClass("active");
+    });
+
+
+    // carousel 
+    
+    $('.carousel').owlCarousel({
+        margin: 20,
+        loop: true,
+        autoplay: true,
+        autoplayTimeOut: 2000,
+        autoplayHoverPause: true,
+        responsive: {
+            0:{
+                items: 1,
+                nav: false
+            },
+            600:{
+               items: 2,
+               nav: false
+           },
+           1000:{
+               items: 3,
+               nav: false
+           }
+        }
+   })
+
+});
